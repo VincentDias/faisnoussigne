@@ -34,7 +34,7 @@ import com.LSF.faisnoussigne.springjwt.security.services.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping()
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
