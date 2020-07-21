@@ -1,4 +1,4 @@
-package com.LSF.faisnoussigne.webservices.blog;
+package com.LSF.faisnoussigne.webservices.article;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
