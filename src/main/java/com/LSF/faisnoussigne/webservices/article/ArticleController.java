@@ -1,4 +1,4 @@
-package com.LSF.faisnoussigne.webservices.blog;
+package com.LSF.faisnoussigne.webservices.article;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
