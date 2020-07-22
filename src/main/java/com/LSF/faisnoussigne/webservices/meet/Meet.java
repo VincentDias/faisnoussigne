@@ -1,9 +1,7 @@
 package com.LSF.faisnoussigne.webservices.meet;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -15,13 +13,15 @@ public class Meet {
 
     private String title;
 
-    private String adress;
+    private String address;
 
+    @Temporal(TemporalType.DATE)
     private Date date;
 
-    private String latitude;
+    private Double lat;
 
-    private String longitude;
+    private Double lng;
+
 
     public Meet() {
     }
@@ -50,27 +50,27 @@ public class Meet {
         this.date = date;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public Double getLat() {
+        return lat;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setLat(Double lat) {
+        this.lat = lat;
     }
 
-    public String getLongitude() {
-        return longitude;
+    public Double getLng() {
+        return lng;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+    public void setLng(Double lng) {
+        this.lng = lng;
     }
 }

@@ -15,4 +15,5 @@ public class GoogleGeocodeController {
     public GoogleGeocode getData(@RequestParam String address){
         return service.getData(address);
     }
+
 }

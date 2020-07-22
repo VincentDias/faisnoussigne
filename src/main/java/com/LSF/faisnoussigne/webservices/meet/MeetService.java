@@ -27,9 +27,10 @@ public class MeetService {
         Meet meetToUpdate = repository.findById(id).get();
         meetToUpdate.setTitle(meet.getTitle());
         meetToUpdate.setDate(meet.getDate());
-        meetToUpdate.setAdress(meet.getAdress());
-        meetToUpdate.setLatitude(meet.getLatitude());
-        meetToUpdate.setLongitude(meet.getLongitude());
+        meetToUpdate.setAddress(meet.getAddress());
+        meetToUpdate.setLat(meet.getLat());
+        meetToUpdate.setLng(meet.getLng());
+
 
         return repository.save(meetToUpdate);
     }

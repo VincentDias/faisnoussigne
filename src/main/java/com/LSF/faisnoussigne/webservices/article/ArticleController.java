@@ -36,7 +36,7 @@ public class ArticleController {
         return service.updateArticle(id, article);
     }
 
-    @DeleteMapping("/admin/{id}")
+    @DeleteMapping("{id}")
     @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteArticle(@PathVariable Long id){

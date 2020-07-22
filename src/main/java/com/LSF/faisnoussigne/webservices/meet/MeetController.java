@@ -2,6 +2,7 @@ package com.LSF.faisnoussigne.webservices.meet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class MeetController {
     }
 
     @PostMapping()
+    @PreAuthorize("hasRole('MODERATOR')")
     public Meet createMeet(@RequestBody Meet meet){
         return service.createMeet(meet);
     }
