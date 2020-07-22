@@ -43,5 +43,4 @@ public class ArticleController {
         service.deleteArticle(id);
     }
 
-
 }
