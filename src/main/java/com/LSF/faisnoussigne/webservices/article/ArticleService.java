@@ -26,8 +26,6 @@ public class ArticleService {
         Article articleToUpdate = repository.findById(id).get();
         articleToUpdate.setTitle(article.getTitle());
         articleToUpdate.setContent(article.getContent());
-        articleToUpdate.setImg(article.getImg());
-        articleToUpdate.setPublishAt(article.getPublishAt());
         return repository.save(articleToUpdate);
     }
 

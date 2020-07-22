@@ -1,9 +1,8 @@
 package com.LSF.faisnoussigne.webservices.article;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.LSF.faisnoussigne.uploadFile.model.DBFile;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -17,9 +16,6 @@ public class Article {
 
     private String content;
 
-    private String img;
-
-    private Date publishAt;
 
     public Article() {
     }
@@ -48,19 +44,4 @@ public class Article {
         this.content = content;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public Date getPublishAt() {
-        return publishAt;
-    }
-
-    public void setPublishAt(Date publishAt) {
-        this.publishAt = publishAt;
-    }
 }

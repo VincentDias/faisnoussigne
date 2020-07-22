@@ -1,5 +1,6 @@
 package com.LSF.faisnoussigne.uploadFile.model;
 
+import com.LSF.faisnoussigne.webservices.article.Article;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
