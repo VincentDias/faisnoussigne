@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/uploadFile")
-@PreAuthorize("hasRole('MODERATOR')")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class FileController {
 

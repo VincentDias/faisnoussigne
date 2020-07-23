@@ -25,19 +25,16 @@ public class ArticleController {
     }
 
     @PostMapping()
-    @PreAuthorize("hasRole('MODERATOR')")
     public Article createArticle(@RequestBody Article article){
         return service.saveArticle(article);
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('MODERATOR')")
     public Article updateArticle(@PathVariable Long id, @RequestBody Article article){
         return service.updateArticle(id, article);
     }
 
     @DeleteMapping("{id}")
-    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteArticle(@PathVariable Long id){
         service.deleteArticle(id);

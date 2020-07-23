@@ -25,19 +25,16 @@ public class MeetController {
     }
 
     @PostMapping()
-    @PreAuthorize("hasRole('MODERATOR')")
     public Meet createMeet(@RequestBody Meet meet){
         return service.createMeet(meet);
     }
 
     @PutMapping()
-    @PreAuthorize("hasRole('MODERATOR')")
     public Meet updateMeet(@PathVariable Long id, @RequestBody Meet meet) {
         return service.updateMeet(id, meet);
     }
 
     @DeleteMapping("{/id}")
-    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteMeet(@PathVariable Long id){
         service.deleteMeet(id);
