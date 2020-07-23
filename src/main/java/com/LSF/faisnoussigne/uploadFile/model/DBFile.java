@@ -23,7 +23,6 @@ public class DBFile {
     @OneToOne(mappedBy = "file")
     private Article article;
 
-
     public DBFile() {
 
     }
@@ -65,6 +64,4 @@ public class DBFile {
     public void setData(byte[] data) {
         this.data = data;
     }
-
-
 }
