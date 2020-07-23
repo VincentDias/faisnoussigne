@@ -1,4 +1,4 @@
-package com.LSF.faisnoussigne.email.config;
+package com.LSF.faisnoussigne.webservices.email;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

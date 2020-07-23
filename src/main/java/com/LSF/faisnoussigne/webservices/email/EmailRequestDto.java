@@ -1,4 +1,4 @@
-package com.LSF.faisnoussigne.email.dto;
+package com.LSF.faisnoussigne.webservices.email;
 
 
 import lombok.Getter;
@@ -26,10 +26,6 @@ public class EmailRequestDto {
 
     public String getTo() {
         return to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
     }
 
     public String getSubject() {

@@ -1,4 +1,4 @@
-package com.LSF.faisnoussigne.email.controller;
+package com.LSF.faisnoussigne.webservices.email;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.LSF.faisnoussigne.email.dto.EmailRequestDto;
-import com.LSF.faisnoussigne.email.service.MailService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)

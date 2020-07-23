@@ -1,4 +1,4 @@
-package com.LSF.faisnoussigne.email.service;
+package com.LSF.faisnoussigne.webservices.email;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -7,7 +7,7 @@ import java.util.Map;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
-import com.LSF.faisnoussigne.email.dto.EmailRequestDto;
+import com.LSF.faisnoussigne.webservices.email.EmailRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
