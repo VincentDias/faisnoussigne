@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/auth/meets")
+@RequestMapping("api/auth/meets")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class MeetController {
 
@@ -31,7 +31,7 @@ public class MeetController {
     }
 
     @PutMapping()
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('MODERATOR')")
     public Meet updateMeet(@PathVariable Long id, @RequestBody Meet meet) {
         return service.updateMeet(id, meet);
     }

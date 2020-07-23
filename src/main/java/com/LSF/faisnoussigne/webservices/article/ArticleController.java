@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/auth/articles")
+@RequestMapping("api/auth/articles")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ArticleController {
 
@@ -31,7 +31,7 @@ public class ArticleController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('MODERATOR')")
     public Article updateArticle(@PathVariable Long id, @RequestBody Article article){
         return service.updateArticle(id, article);
     }
