@@ -1,6 +1,7 @@
 package com.LSF.faisnoussigne.webservices.article;
 
 import com.LSF.faisnoussigne.uploadFile.model.DBFile;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,6 +16,10 @@ public class Article {
     private String title;
 
     private String content;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "files_id", referencedColumnName = "id")
+    private DBFile file;
 
 
     public Article() {
@@ -44,4 +49,11 @@ public class Article {
         this.content = content;
     }
 
+    public DBFile getFile() {
+        return file;
+    }
+
+    public void setFile(DBFile file) {
+        this.file = file;
+    }
 }

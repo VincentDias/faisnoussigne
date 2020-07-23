@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/uploadFile")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class FileController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
@@ -28,7 +30,7 @@ public class FileController {
     @Autowired
     private DBFileStorageService dbFileStorageService;
 
-    @PostMapping("/uploadFile")
+    @PostMapping()
     public UploadFileResponse uploadFile(@RequestBody MultipartFile file) {
         DBFile dbFile = dbFileStorageService.storeFile(file);
 

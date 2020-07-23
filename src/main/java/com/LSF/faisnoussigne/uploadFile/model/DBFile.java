@@ -20,6 +20,10 @@ public class DBFile {
     @Lob
     private byte[] data;
 
+    @OneToOne(mappedBy = "file")
+    private Article article;
+
+
     public DBFile() {
 
     }
@@ -61,4 +65,6 @@ public class DBFile {
     public void setData(byte[] data) {
         this.data = data;
     }
+
+
 }
