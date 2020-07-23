@@ -22,8 +22,14 @@ public class MailSenderController {
     @PostMapping()
     public ResponseEntity<String> sendMail(@RequestBody EmailRequestDto emailRequest) {
         Map<String, String> model = new HashMap<>();
+
         model.put("name", emailRequest.getName());
-        model.put("value", "Fais nous signe!");
+        model.put("value", "Vous avez reçu un message de Fais nous signe!");
+        model.put("message", emailRequest.getMessage());
+        model.put("from", emailRequest.getFrom());
+        model.put("subject", emailRequest.getSubject());
+
+
         String response = mailService.sendMail(emailRequest, model);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

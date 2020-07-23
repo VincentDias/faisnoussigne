@@ -4,13 +4,17 @@ package com.LSF.faisnoussigne.email.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 
 public class EmailRequestDto {
 
     private String from;
-    private String to;
+    private static String to =  "lakazmobile.test@gmail.com";
     private String subject;
     private String name;
+    private String message;
+
 
     public String getFrom() {
         return from;
@@ -42,5 +46,13 @@ public class EmailRequestDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

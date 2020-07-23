@@ -4,8 +4,12 @@
     <title>Envoie de mail via Spring Boot</title>
   </head>
   <body>
-    <h2>Ceci est un mail reçu via Spring Boot</h2>
-    <h3>Salut ${name}!!</h3>
-	<p>${value}</p>
+    <h2>${subject}</h2>
+
+    <h3>de ${name}</h3>
+    </br>
+	<p>${message}</p>
+	</br>
+	<p>Vous pouvez lui répondre : ${from}</p>
   </body>
 </html>

@@ -38,15 +38,19 @@ public class MailService {
                     StandardCharsets.UTF_8.name());
 
             ClassPathResource pdf = new ClassPathResource("static/c3cbbf38a0528c242ba1ac32cdbdd0f8.png");
-            ClassPathResource image = new ClassPathResource("static/c3cbbf38a0528c242ba1ac32cdbdd0f8.png");
             Template template = configuration.getTemplate("email.ftl");
+            ClassPathResource image = new ClassPathResource("static/idée-de-fond-d-ecran-groupe-de-musique-fond-d-écran-drole-fond-d-écran-stylé-idée-stylée-image-pour-ordinateur-magnifique-estetique-originale.jpg");
             String html = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
 
             helper.setTo(request.getTo());
             helper.setFrom(request.getFrom());
-            helper.setSubject(request.getSubject());
+            helper.setSubject("Vous avez reçu un message de Fais nous signe!");
+            //helper.setSubject(request.getSubject());
+            helper.setText(request.getMessage());
             helper.setText(html, true);
-            helper.addInline("asbnotebook", image);
+
+
+            //helper.addInline("asbnotebook", image);
             helper.addAttachment("c3cbbf38a0528c242ba1ac32cdbdd0f8.png", pdf);
 
             mailSender.send(message);
