@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/auth/articles")
+@RequestMapping("/articles")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ArticleController {
 
