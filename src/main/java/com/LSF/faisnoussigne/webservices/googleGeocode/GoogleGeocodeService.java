@@ -25,6 +25,6 @@ public class GoogleGeocodeService {
                 .retrieve()
                 .bodyToMono(GoogleGeocode.class).block();
 
-}
+    }
 
 }
