@@ -16,4 +16,9 @@ public class GoogleGeocodeController {
         return service.getData(address);
     }
 
+    @PostMapping
+    public GoogleGeocode postData(@RequestParam String address){
+        return service.postData(address);
+    }
+
 }

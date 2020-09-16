@@ -27,4 +27,23 @@ public class GoogleGeocodeService {
 
     }
 
+    public GoogleGeocode postData(String parameters){
+
+        WebClient webClient = WebClient
+                .builder()
+                .baseUrl("https://maps.googleapis.com/maps/api/geocode")
+                .build();
+
+        return webClient.get()
+
+                .uri(UriBuilder -> UriBuilder
+                        .path("/json")
+                        .queryParam("parameters", parameters)
+                        .queryParam("key", System.getenv("google_api_key"))
+                        .build())
+                .retrieve()
+                .bodyToMono(GoogleGeocode.class).block();
+
+    }
+
 }
