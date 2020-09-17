@@ -35,7 +35,7 @@ public class MeetController {
         return service.updateMeet(id, meet);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteMeet(@PathVariable Long id){
         service.deleteMeet(id);
