@@ -1,5 +1,7 @@
 package com.LSF.faisnoussigne.webservices.meet;
 
+import com.LSF.faisnoussigne.webservices.googleGeocode.GoogleGeocodeService;
+import com.LSF.faisnoussigne.webservices.googleGeocode.models.GoogleGeocode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,9 @@ public class MeetService {
     @Autowired
     MeetRepository repository;
 
+    @Autowired
+    GoogleGeocodeService googleGeocodeService;
+
     public List<Meet> getAll() {
         return repository.findAll();
     }
@@ -20,6 +25,10 @@ public class MeetService {
     }
 
     public Meet createMeet(Meet meet){
+        GoogleGeocode googleReturn = googleGeocodeService.getData(meet.getAddress());
+        meet.setAddress(googleReturn.getResults().get(0).getFormattedAddress());
+        meet.setLat(googleReturn.getResults().get(0).getGeometry().getLocation().getLat());
+        meet.setLng(googleReturn.getResults().get(0).getGeometry().getLocation().getLng());
         return repository.save(meet);
     }
 
