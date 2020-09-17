@@ -30,7 +30,7 @@ public class MeetController {
         return service.createMeet(meet);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Meet updateMeet(@PathVariable Long id, @RequestBody Meet meet) {
         return service.updateMeet(id, meet);
     }
