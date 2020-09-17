@@ -34,13 +34,12 @@ public class MeetService {
 
     public Meet updateMeet(Long id, Meet meet) {
         Meet meetToUpdate = repository.findById(id).get();
+        GoogleGeocode googleReturn = googleGeocodeService.getData(meet.getAddress());
         meetToUpdate.setTitle(meet.getTitle());
         meetToUpdate.setDate(meet.getDate());
-        meetToUpdate.setAddress(meet.getAddress());
-        meetToUpdate.setLat(meet.getLat());
-        meetToUpdate.setLng(meet.getLng());
-
-
+        meetToUpdate.setAddress(googleReturn.getResults().get(0).getFormattedAddress());
+        meetToUpdate.setLat(googleReturn.getResults().get(0).getGeometry().getLocation().getLat());
+        meetToUpdate.setLng(googleReturn.getResults().get(0).getGeometry().getLocation().getLng());
         return repository.save(meetToUpdate);
     }
 
