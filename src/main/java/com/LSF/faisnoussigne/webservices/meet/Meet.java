@@ -22,6 +22,8 @@ public class Meet {
 
     private Double lng;
 
+    private String content;
+
 
     public Meet() {
     }
@@ -72,5 +74,13 @@ public class Meet {
 
     public void setLng(Double lng) {
         this.lng = lng;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
