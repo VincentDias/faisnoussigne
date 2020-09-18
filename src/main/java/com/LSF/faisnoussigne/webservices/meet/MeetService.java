@@ -37,6 +37,7 @@ public class MeetService {
         GoogleGeocode googleReturn = googleGeocodeService.getData(meet.getAddress());
         meetToUpdate.setTitle(meet.getTitle());
         meetToUpdate.setDate(meet.getDate());
+        meetToUpdate.setContent(meet.getContent());
         meetToUpdate.setAddress(googleReturn.getResults().get(0).getFormattedAddress());
         meetToUpdate.setLat(googleReturn.getResults().get(0).getGeometry().getLocation().getLat());
         meetToUpdate.setLng(googleReturn.getResults().get(0).getGeometry().getLocation().getLng());
